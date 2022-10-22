@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    
+    <link href="css/main.min.css" rel="stylesheet">
+    
+</head>
+<body style="background:rgba(0, 0, 0, 25%);">
+<!--Navigation Bar-->
+<div class="container-fluid" style="background-color:gray;">
+    
+    <ul class="navbar-nav text-uppercase">
+                                
+        <li class="nav-item">
+            <a class="nav-link"  style="color:#073418;">Rock · Paper · Scissors</a>
+        </li>
+</div>
+<!--end of nav bar>-->    
+<center>
+
+<section id="logIn" class="m-3 border border-dark p-3">
+    <br>
+    <p>This game is played in a 
+            series of rounds and the person who wins most rounds wins the game.
+    </p>
+    <p>
+        <b>All you need to know is:<br>-Rock(👊) beats scissors(✌)<br>-Scissors(✌) beats paper(🖐)<br>-Paper(🖐) beats rock(👊)</b>
+    </p>
+    <form>
+        <b>Nickname:</b>
+        <input type="text" id="playerName"> <br><br>
+        <button class="btn btn-info" id="start" type="button" onclick="startGame();">Start Game!</button>
+    </form>
+</section>
+<br><br>
+<section id="game" class="m-3 border border-dark p-3" style="display: none;">
+    
+    <br>
+    <h1 id="roundNum">Round number</h1>
+    <div id="score" class="row" style="border-style:ridge; border-color:aquamarine; background:linear-gradient(-45deg, red 30% 25%, powderblue 50% 100%);">
+        <div class="col-6">
+            <h5 id="outputName">Player1</h5>
+            <h1 id="scoreboardP1">0</h1>
+        </div>
+        <div class="col-6">
+            <h5>Bot</h5>
+            <h1 id="scoreboardBot">0</h1>
+        </div>
+    </div>
+    <br>
+    <h4 id="winner"></h4>
+    <br>
+
+    <div class="container" id="arena" style="background:linear-gradient(-45deg, red 30% 25%, powderblue 50% 100%);">
+        <div class="row">
+            <div id="PlayerChoice" class="col-6" style="font-size:120px">
+                <h4>Your Choice</h4>
+                🤜
+            </div>
+            <div id="BotChoice" class="col-6" style="font-size:120px">
+                <h4>Bot's Choice</h4>
+                🤛
+            </div>
+        </div>
+    </div>
+    <br>
+<section id="choices">
+    <b>Choose your move:</b><br>
+    <button id="rock" style="font-size:48px" class="btn m-2" style="border-radius:50%;" onclick="compareChoice('rock');">&#9994</button>
+    <button id="paper" style="font-size:48px" class="btn m-2" onclick="compareChoice('paper');">&#9995</button>
+    <button id="scissors" style="font-size:48px" class="btn m-2" onclick="compareChoice('scissors');">&#9996</button>
+<br>
+
+</section>
+<div id="buttons">
+    <button class="btn btn-info m-2" id="reset" onclick="resetGame();">Reset Game</button><br>
+    <button class="btn btn-info m-2" id="matchHistory" onclick="viewMatchHistory();" style="display:none;">View Match History</button>
+</div>
+<br><br>
+<section id="matchSummary" style="display: none;">
+    <table class="table table-dark-striped" id="Summary">
+        <tr>
+            <th>Round</th>
+            <th>Player 1</th>
+            <th>Bot</th>
+            <th>Result</th>
+        </tr>
+
+    </table>
+</section>
+</section>
+</center>
+</body>
+<script src="main.js"></script>
+</html>
